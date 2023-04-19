@@ -1,13 +1,13 @@
 <template>
     <ul class="sidenav app-sidenav open">
-        <li>
+        <li class="waves-effect waves-orange">
         <router-link
         v-for="link in links"
         :key="link.url"
         active-class="active"
         :to="link.url"
         >
-        <a href="#" class="waves-effect waves-orange pointer">{{ link.title  }}</a>
+        <a href="#" class="black-text pointer">{{ link.title  }}</a>
         </router-link></li>
 
     </ul>
