@@ -1,6 +1,6 @@
 <template>
-    <ul class="sidenav app-sidenav open">
-        <li class="waves-effect waves-orange">
+    <ul class="sidenav app-sidenav open orange waves-effect waves-yellow">
+        <li class="">
         <router-link
         v-for="link in links"
         :key="link.url"

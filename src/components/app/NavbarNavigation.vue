@@ -3,7 +3,7 @@
         <div class="nav-wrapper">
             <div class="navbar-left">
                 
-                <span class="black-text">{{ date }}</span>
+                <span class="black-text">{{ formatDate2(date)  }}</span>
             </div>
 
             <ul class="right hide-on-small-and-down">
@@ -42,15 +42,17 @@ import M from 'materialize-css'
 
 export default{
     data: () => ({
-        date: new Date(),
+        date: new Date,
         interval: null,
         dropdown: null,
     }),
     methods: {
         logOut(){
             this.$router.push('/login?message=logout')
-        }
+        },
+        formatDate2: d => d.toLocaleString('ru-RU').replace(',', '').slice(0, -3)
     },
+
     mounted() {
         this.interval = setInterval (() => {
             this.date = new Date()
@@ -68,3 +70,4 @@ export default{
 }
 
 </script>
+
