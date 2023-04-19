@@ -3,7 +3,7 @@
         <div class="nav-wrapper">
             <div class="navbar-left">
                 
-                <span class="black-text">12.12.12</span>
+                <span class="black-text">{{ date }}</span>
             </div>
 
             <ul class="right hide-on-small-and-down">
@@ -41,15 +41,29 @@
 import M from 'materialize-css' 
 
 export default{
+    data: () => ({
+        date: new Date(),
+        interval: null,
+        dropdown: null,
+    }),
     methods: {
         logOut(){
             this.$router.push('/login?message=logout')
         }
     },
     mounted() {
-        M.Dropdown.init(this.$refs.dropdown, {
+        this.interval = setInterval (() => {
+            this.date = new Date()
+        }, 1000)
+        this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
             constrainWidth: true
         })
+    },
+    beforeUnmount() {
+        clearInterval(this.interval)
+        if (this.dropdown && this.dropdown.destroy){
+            this.dropdown.destroy()
+        }
     }
 }
 
