@@ -46,6 +46,7 @@ export default{
         timestamp: "",
         interval: null,
         dropdown: null,
+        mounth: ['января', 'февраля', 'матра','апреля', 'мая', 'июня', 'июля', 'августа','сентября', 'октяюря', 'ноября', 'декабря']
     }),
     methods: {
         logOut(){
@@ -53,7 +54,8 @@ export default{
         },
         getNow() {
             const today = new Date();
-            const date = today.getDate() + '.' +(today.getMonth()+1)+ '.' + today.getFullYear();
+            const month = today.getMonth()
+            const date = today.getDate() + ' ' + this.mounth[month]+ ' ' + today.getFullYear();
             const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
             const dateTime = date +' '+ time;
             this.timestamp = dateTime;
