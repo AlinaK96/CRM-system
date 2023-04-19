@@ -42,6 +42,24 @@ const routes = [
     name: 'home',
     meta:{layout: 'main'},
     component: () => import('../views/HomePage.vue')
+  },
+  {
+    path:'/planing',
+    name: 'planing',
+    meta:{layout: 'main'},
+    component: () => import('../views/PlaningView.vue')
+  },
+  {
+    path:'/profile',
+    name: 'profile',
+    meta:{layout: 'main'},
+    component: () => import('../views/ProfileView.vue')
+  },
+  {
+    path:'/record',
+    name: 'record',
+    meta:{layout: 'main'},
+    component: () => import('../views/RecordView.vue')
   }
 ]
 
