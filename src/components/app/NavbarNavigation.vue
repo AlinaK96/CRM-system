@@ -12,6 +12,7 @@
                         class="dropdown-trigger black-text"
                         href="#"
                         data-target="dropdown"
+                        ref="dropdown"
                     >
                         USER NAME
                         <i class="material-icons right">arrow_drop_down</i>
@@ -35,3 +36,16 @@
         </div>
     </nav>
 </template>
+
+<script>
+import M from 'materialize-css' 
+
+export default{
+    mounted() {
+        M.Dropdown.init(this.$refs.dropdown, {
+            constrainWidth: true
+        })
+    },
+}
+
+</script>
